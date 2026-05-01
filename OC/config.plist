@@ -605,7 +605,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Flavour</key>
-				<string>Linux</string>
+				<string>Ubuntu</string>
 				<key>FullNvramAccess</key>
 				<false/>
 				<key>Name</key>
