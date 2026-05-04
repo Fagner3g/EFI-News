@@ -1,8 +1,12 @@
-# EFI-News — Mac Pro Hackintosh
+# Mac Pro Hackintosh — EFI
 
-Repositório central do Hackintosh (Intel i5-12400F + AMD RX 5500 XT).
+**Intel i5-12400F + AMD RX 5500 XT** | Triple boot: macOS + Windows + Ubuntu
 
-- **`master`** → EFI de produção (disco interno)
-- **`develop`** → EFI de dev/debug (pendrive)
+| Branch | EFI | Localização |
+|---|---|---|
+| `master` | Produção | disk0s3 interno (`/Volumes/NO NAME`) |
+| `develop` | Dev/Debug | pendrive MACOS 1 (`/Volumes/MACOS 1`) |
 
-Documentação em `hackintosh/system.md` | Contexto IA em `ai-context/README.md`
+A pasta `EFI/` é um espelho exato da partição — restore é só copiar `EFI/*` para a partição.
+
+Documentação: `system.md` | Contexto IA: `ai-context/README.md`

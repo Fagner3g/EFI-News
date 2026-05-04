@@ -22,12 +22,40 @@
 
 ## Estrutura EFI
 
-| EFI | Localização | Branch GitHub | Uso |
+| EFI | Localização física | Branch GitHub | Uso |
 |---|---|---|---|
 | Produção | disk0s3 (interno, 314 MB) | `master` | Boot diário |
 | Dev/Debug | disk4s1 (pendrive MACOS 1, 30 GB) | `develop` | Testes |
 
-## Kexts Instalados (Produção)
+### Estrutura do repositório (espelho da partição)
+
+```
+hackintosh/
+├── EFI/                    ← cópia exata da partição EFI (disk0s3)
+│   ├── APPLE/              ← firmware updater Apple
+│   ├── BOOT/               ← bootloader genérico UEFI
+│   ├── Microsoft/          ← boot entry Windows
+│   ├── OC/                 ← OpenCore (macOS)
+│   │   ├── ACPI/           ← SSDTs
+│   │   ├── Drivers/        ← drivers UEFI
+│   │   ├── Kexts/          ← kernel extensions
+│   │   ├── Resources/      ← tema GoldenGate
+│   │   └── config.plist    ← configuração principal
+│   └── ubuntu/             ← boot entry Ubuntu
+├── README.md
+├── system.md               ← este arquivo
+└── ai-context/
+    └── README.md
+```
+
+### Restore completo
+
+```bash
+sudo diskutil mount disk0s3
+cp -r /Users/fagner/www/hackintosh/EFI/* "/Volumes/NO NAME/EFI/"
+```
+
+## Kexts Instalados (Produção — branch master)
 
 | Kext | Versão | Função |
 |---|---|---|
